@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erwin Reporting Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📊 Erwin Reporting Documentation</h1>
+            <p>Comprehensive reporting documentation and resources</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Welcome</h2>
+            <p>Access all Erwin data modeling and reporting documentation in one place. 
+               No more scattered files or difficult sharing!</p>
+        </section>
+
+        <section class="reports-grid">
+            <h2>Available Reports</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h3>📈 Sales Report</h3>
+                    <p>Monthly sales performance and trends analysis</p>
+                    <a href="reports/sales-report.htm" class="btn">View Report</a>
+                </div>
+
+                <div class="card">
+                    <h3>📦 Inventory Report</h3>
+                    <p>Current inventory levels and stock analysis</p>
+                    <a href="reports/inventory-report.htm" class="btn">View Report</a>
+                </div>
+
+                <div class="card">
+                    <h3>💰 Financial Report</h3>
+                    <p>Financial statements and budget tracking</p>
+                    <a href="reports/financial-report.htm" class="btn">View Report</a>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Data Model Overview</h3>
+                    <p>Complete data model documentation</p>
+                    <a href="reports/data-model.htm" class="btn">View Report</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="reports/getting-started.htm">Getting Started Guide</a></li>
+                <li><a href="reports/user-manual.htm">User Manual</a></li>
+                <li><a href="reports/faq.htm">Frequently Asked Questions</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Erwin Documentation. Last Updated: <span id="lastUpdated"></span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
