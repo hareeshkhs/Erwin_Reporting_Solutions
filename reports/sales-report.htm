@@ -5,37 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Report - Erwin Documentation</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        .report-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 8px;
-        }
-        .breadcrumb {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-        .breadcrumb a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-        th, td {
-            padding: 0.8rem;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        th {
-            background: #f8f9fa;
-            font-weight: 600;
-        }
-    </style>
 </head>
 <body>
     <div class="report-container">
@@ -43,8 +12,15 @@
             <a href="../index.html">← Back to Home</a>
         </div>
         
-        <h1>📈 Sales Report</h1>
-        <p><strong>Generated:</strong> October 2024</p>
+        <div class="report-header">
+            <h1>📈 Sales Report</h1>
+            <p class="report-meta"><strong>Generated:</strong> October 24, 2024 | <strong>Period:</strong> Q1-Q3 2024</p>
+        </div>
+        
+        <h2>Executive Summary</h2>
+        <div class="success-box">
+            <p><strong>Overall Performance:</strong> Sales increased by 18% compared to the same period last year, exceeding targets by $125,000.</p>
+        </div>
         
         <h2>Monthly Sales Overview</h2>
         <table>
@@ -53,6 +29,7 @@
                     <th>Month</th>
                     <th>Revenue</th>
                     <th>Units Sold</th>
+                    <th>Avg. Order Value</th>
                     <th>Growth</th>
                 </tr>
             </thead>
@@ -61,29 +38,130 @@
                     <td>January</td>
                     <td>$125,000</td>
                     <td>450</td>
-                    <td>+5%</td>
+                    <td>$278</td>
+                    <td class="positive">+5%</td>
                 </tr>
                 <tr>
                     <td>February</td>
                     <td>$132,000</td>
                     <td>475</td>
-                    <td>+5.6%</td>
+                    <td>$278</td>
+                    <td class="positive">+5.6%</td>
                 </tr>
                 <tr>
                     <td>March</td>
                     <td>$145,000</td>
                     <td>520</td>
-                    <td>+9.8%</td>
+                    <td>$279</td>
+                    <td class="positive">+9.8%</td>
+                </tr>
+                <tr>
+                    <td>April</td>
+                    <td>$138,000</td>
+                    <td>495</td>
+                    <td>$279</td>
+                    <td class="negative">-4.8%</td>
+                </tr>
+                <tr>
+                    <td>May</td>
+                    <td>$155,000</td>
+                    <td>550</td>
+                    <td>$282</td>
+                    <td class="positive">+12.3%</td>
+                </tr>
+                <tr>
+                    <td>June</td>
+                    <td>$162,000</td>
+                    <td>575</td>
+                    <td>$282</td>
+                    <td class="positive">+4.5%</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>$148,000</td>
+                    <td>525</td>
+                    <td>$282</td>
+                    <td class="negative">-8.6%</td>
+                </tr>
+                <tr>
+                    <td>August</td>
+                    <td>$170,000</td>
+                    <td>600</td>
+                    <td>$283</td>
+                    <td class="positive">+14.9%</td>
+                </tr>
+                <tr>
+                    <td>September</td>
+                    <td>$175,000</td>
+                    <td>615</td>
+                    <td>$285</td>
+                    <td class="positive">+2.9%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Sales by Region</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Region</th>
+                    <th>Revenue</th>
+                    <th>% of Total</th>
+                    <th>YoY Growth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>North America</td>
+                    <td>$685,000</td>
+                    <td>48%</td>
+                    <td class="positive">+15%</td>
+                </tr>
+                <tr>
+                    <td>Europe</td>
+                    <td>$430,000</td>
+                    <td>30%</td>
+                    <td class="positive">+22%</td>
+                </tr>
+                <tr>
+                    <td>Asia Pacific</td>
+                    <td>$285,000</td>
+                    <td>20%</td>
+                    <td class="positive">+18%</td>
+                </tr>
+                <tr>
+                    <td>Other</td>
+                    <td>$30,000</td>
+                    <td>2%</td>
+                    <td class="positive">+8%</td>
                 </tr>
             </tbody>
         </table>
         
         <h2>Key Insights</h2>
+        <div class="info-box">
+            <h3>Top Findings</h3>
+            <ul>
+                <li>Q3 was the strongest quarter with $493,000 in total revenue</li>
+                <li>September achieved the highest monthly revenue at $175,000</li>
+                <li>Online sales increased by 25% compared to last year</li>
+                <li>Europe region showed exceptional growth at 22% YoY</li>
+                <li>Average order value increased from $278 to $285 throughout the period</li>
+            </ul>
+        </div>
+        
+        <h2>Recommendations</h2>
         <ul>
-            <li>Q1 showed strong growth with 15% increase YoY</li>
-            <li>March was the best performing month</li>
-            <li>Online sales increased by 25%</li>
+            <li><strong>Expand European operations:</strong> Given the 22% growth, consider increasing inventory and marketing budget for this region</li>
+            <li><strong>Investigate April dip:</strong> Analyze factors that led to the 4.8% decline to prevent future occurrences</li>
+            <li><strong>Optimize Q3 strategies:</strong> Replicate successful Q3 tactics in Q4 planning</li>
+            <li><strong>Enhance online presence:</strong> Continue investing in digital channels as online sales outperform traditional channels</li>
         </ul>
+        
+        <div class="nav-links">
+            <a href="../index.html">← Home</a>
+            <a href="inventory-report.htm">Next: Inventory Report →</a>
+        </div>
     </div>
 </body>
 </html>
