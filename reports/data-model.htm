@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Model Overview - Erwin Documentation</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="report-container">
+        <div class="breadcrumb">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+        
+        <div class="report-header">
+            <h1>📊 Data Model Overview</h1>
+            <p class="report-meta"><strong>Version:</strong> 3.2 | <strong>Last Updated:</strong> October 24, 2024 | <strong>Model Type:</strong> Relational</p>
+        </div>
+        
+        <h2>Database Architecture Summary</h2>
+        <div class="info-box">
+            <h3>Model Statistics</h3>
+            <ul>
+                <li><strong>Total Entities:</strong> 42</li>
+                <li><strong>Total Relationships:</strong> 68</li>
+                <li><strong>Total Attributes:</strong> 387</li>
+                <li><strong>Database Platform:</strong> PostgreSQL 14.x / SQL Server 2019</li>
+                <li><strong>Normalization Level:</strong> 3NF (Third Normal Form)</li>
+            </ul>
+        </div>
+        
+        <h2>Core Subject Areas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject Area</th>
+                    <th>Entities</th>
+                    <th>Purpose</th>
+                    <th>Key Tables</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sales & Orders</strong></td>
+                    <td>8</td>
+                    <td>Manage customer orders and sales transactions</td>
+                    <td>Orders, OrderItems, Customers</td>
+                </tr>
+                <tr>
+                    <td><strong>Inventory Management</strong></td>
+                    <td>12</td>
+                    <td>Track products, stock levels, and warehouse operations</td>
+                    <td>Products, Inventory, Warehouses</td>
+                </tr>
+                <tr>
+                    <td><strong>Financial</strong></td>
+                    <td>9</td>
+                    <td>Record financial transactions and accounting data</td>
+                    <td>Transactions, Accounts, JournalEntries</td>
+                </tr>
+                <tr>
+                    <td><strong>Human Resources</strong></td>
+                    <td>6</td>
+                    <td>Employee information and organizational structure</td>
+                    <td>Employees, Departments, Positions</td>
+                </tr>
+                <tr>
+                    <td><strong>Suppliers</strong></td>
+                    <td>4</td>
+                    <td>Vendor management and procurement</td>
+                    <td>Suppliers, PurchaseOrders</td>
+                </tr>
+                <tr>
+                    <td><strong>Reporting & Analytics</strong></td>
+                    <td>3</td>
+                    <td>Data warehouse and reporting structures</td>
+                    <td>FactSales, DimTime, DimProduct</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Entity Relationship Overview</h2>
+        
+        <div class="entity-diagram">
+            <h3>Sales & Inventory Core Model</h3>
+            <pre>
+┌──────────────┐         ┌──────────────┐         ┌──────────────┐
+│  CUSTOMERS   │         │    ORDERS    │         │ ORDER_ITEMS  │
+├──────────────┤         ├──────────────┤         ├──────────────┤
+│ CustomerID   │────────>│ OrderID      │<────────│ OrderItemID  │
+│ FirstName    │    1:N  │ CustomerID   │    1:N  │ OrderID      │
+│ LastName     │         │ OrderDate    │         │ ProductID    │
+│ Email        │         │ TotalAmount  │         │ Quantity     │
+│ Phone        │         │ Status       │         │ UnitPrice    │
+│ Address      │         │ ShipAddress  │         │ Subtotal     │
+└──────────────┘         └──────────────┘         └──────────────┘
+                                                           │
+                                                           │ N:1
+                                                           ▼
+┌──────────────┐         ┌──────────────┐         ┌──────────────┐
+│  WAREHOUSES  │         │  INVENTORY   │         │   PRODUCTS   │
+├──────────────┤         ├──────────────┤         ├──────────────┤
+│ WarehouseID  │────────>│ InventoryID  │<────────│ ProductID    │
+│ Name         │    1:N  │ ProductID    │    N:1  │ SKU          │
+│ Location     │         │ WarehouseID  │         │ Name         │
+│ Capacity     │         │ Quantity     │         │ Description  │
+│ Manager      │         │ ReorderPoint │         │ Category     │
+└──────────────┘         │ LastUpdated  │         │ Price        │
+                         └──────────────┘         │ Status       │
+                                                  └──────────────┘
+            </pre>
+        </div>
+        
+        <h2>Key Entities Detail</h2>
+        
+        <h3>1. CUSTOMERS Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Data Type</th>
+                    <th>Constraints</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CustomerID</td>
+                    <td>INT</td>
+                    <td>PRIMARY KEY, AUTO INCREMENT</td>
+                    <td>Unique customer identifier</td>
+                </tr>
+                <tr>
+                    <td>FirstName</td>
+                    <td>VARCHAR(50)</td>
+                    <td>NOT NULL</td>
+                    <td>Customer first name</td>
+                </tr>
+                <tr>
+                    <td>LastName</td>
+                    <td>VARCHAR(50)</td>
+                    <td>NOT NULL</td>
+                    <td>Customer last name</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>VARCHAR(100)</td>
+                    <td>UNIQUE, NOT NULL</td>
+                    <td>Customer email address</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>VARCHAR(20)</td>
+                    <td>NULL</td>
+                    <td>Contact phone number</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>VARCHAR(200)</td>
+                    <td>NULL</td>
+                    <td>Shipping address</td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>VARCHAR(50)</td>
+                    <td>NULL</td>
+                    <td>City</td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>VARCHAR(50)</td>
+                    <td>DEFAULT 'USA'</td>
+                    <td>Country code</td>
+                </tr>
+                <tr>
+                    <td>CreatedDate</td>
+                    <td>TIMESTAMP</td>
+                    <td>DEFAULT CURRENT_TIMESTAMP</td>
+                    <td>Account creation date</td>
+                </tr>
+                <tr>
+                    <td>LastModified</td>
+                    <td>TIMESTAMP</td>
+                    <td>ON UPDATE CURRENT_TIMESTAMP</td>
+                    <td>Last update timestamp</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>2. PRODUCTS Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Data Type</th>
+                    <th>Constraints</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ProductID</td>
+                    <td>INT</td>
+                    <td>PRIMARY KEY, AUTO INCREMENT</td>
+                    <td>Unique product identifier</td>
+                </tr>
+                <tr>
+                    <td>SKU</td>
+                    <td>VARCHAR(50)</td>
+                    <td>UNIQUE, NOT NULL</td>
+                    <td>Stock Keeping Unit code</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>VARCHAR(200)</td>
+                    <td>NOT NULL</td>
+                    <td>Product name</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>TEXT

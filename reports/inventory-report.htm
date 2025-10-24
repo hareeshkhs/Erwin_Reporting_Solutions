@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Report - Erwin Documentation</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="report-container">
+        <div class="breadcrumb">
+            <a href="../index.html">← Back to Home</a>
+        </div>
+        
+        <div class="report-header">
+            <h1>📦 Inventory Report</h1>
+            <p class="report-meta"><strong>Generated:</strong> October 24, 2024 | <strong>Snapshot Date:</strong> October 23, 2024</p>
+        </div>
+        
+        <h2>Inventory Summary</h2>
+        <div class="info-box">
+            <h3>Current Status</h3>
+            <p><strong>Total SKUs:</strong> 1,247 | <strong>Total Units:</strong> 45,680 | <strong>Total Value:</strong> $2,345,890</p>
+        </div>
+        
+        <h2>Stock Levels by Category</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>SKUs</th>
+                    <th>Units in Stock</th>
+                    <th>Value</th>
+                    <th>Turnover Rate</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Electronics</td>
+                    <td>325</td>
+                    <td>8,450</td>
+                    <td>$845,200</td>
+                    <td>6.2x/year</td>
+                    <td class="positive">Optimal</td>
+                </tr>
+                <tr>
+                    <td>Furniture</td>
+                    <td>180</td>
+                    <td>3,200</td>
+                    <td>$456,800</td>
+                    <td>4.1x/year</td>
+                    <td class="positive">Optimal</td>
+                </tr>
+                <tr>
+                    <td>Office Supplies</td>
+                    <td>450</td>
+                    <td>18,500</td>
+                    <td>$285,400</td>
+                    <td>8.5x/year</td>
+                    <td class="positive">Optimal</td>
+                </tr>
+                <tr>
+                    <td>Accessories</td>
+                    <td>220</td>
+                    <td>12,800</td>
+                    <td>$458,900</td>
+                    <td>5.8x/year</td>
+                    <td class="positive">Optimal</td>
+                </tr>
+                <tr>
+                    <td>Industrial Tools</td>
+                    <td>72</td>
+                    <td>2,730</td>
+                    <td>$299,590</td>
+                    <td>3.2x/year</td>
+                    <td class="warning">Low Turnover</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Items Requiring Attention</h2>
+        
+        <h3>Low Stock Items (Reorder Recommended)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Product Name</th>
+                    <th>Current Stock</th>
+                    <th>Reorder Point</th>
+                    <th>Lead Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ELC-2045</td>
+                    <td>Wireless Keyboard Pro</td>
+                    <td>45</td>
+                    <td>150</td>
+                    <td>14 days</td>
+                    <td class="negative">Reorder Now</td>
+                </tr>
+                <tr>
+                    <td>FUR-8923</td>
+                    <td>Executive Desk Chair</td>
+                    <td>12</td>
+                    <td>30</td>
+                    <td>21 days</td>
+                    <td class="negative">Reorder Now</td>
+                </tr>
+                <tr>
+                    <td>OFF-5621</td>
+                    <td>A4 Copy Paper (Case)</td>
+                    <td>85</td>
+                    <td>200</td>
+                    <td>7 days</td>
+                    <td class="warning">Monitor</td>
+                </tr>
+                <tr>
+                    <td>ACC-3456</td>
+                    <td>USB-C Cable 6ft</td>
+                    <td>180</td>
+                    <td>500</td>
+                    <td>10 days</td>
+                    <td class="warning">Monitor</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Overstock Items (Consider Promotion)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Product Name</th>
+                    <th>Current Stock</th>
+                    <th>Optimal Stock</th>
+                    <th>Excess Units</th>
+                    <th>Recommendation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>IND-7845</td>
+                    <td>Heavy Duty Drill Set</td>
+                    <td>450</td>
+                    <td>150</td>
+                    <td>300</td>
+                    <td class="warning">30% Discount</td>
+                </tr>
+                <tr>
+                    <td>FUR-2367</td>
+                    <td>Filing Cabinet 4-Drawer</td>
+                    <td>280</td>
+                    <td>100</td>
+                    <td>180</td>
+                    <td class="warning">Bundle Deal</td>
+                </tr>
+                <tr>
+                    <td>ELC-9012</td>
+                    <td>Bluetooth Speaker Mini</td>
+                    <td>820</td>
+                    <td>400</td>
+                    <td>420</td>
+                    <td class="warning">Flash Sale</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Warehouse Distribution</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Warehouse Location</th>
+                    <th>Capacity</th>
+                    <th>Current Usage</th>
+                    <th>% Utilized</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Central Warehouse (Main)</td>
+                    <td>50,000 units</td>
+                    <td>32,450 units</td>
+                    <td>65%</td>
+                    <td class="positive">Good</td>
+                </tr>
+                <tr>
+                    <td>East Coast Distribution</td>
+                    <td>20,000 units</td>
+                    <td>8,120 units</td>
+                    <td>41%</td>
+                    <td class="positive">Good</td>
+                </tr>
+                <tr>
+                    <td>West Coast Hub</td>
+                    <td>15,000 units</td>
+                    <td>5,110 units</td>
+                    <td>34%</td>
+                    <td class="positive">Good</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Key Metrics</h2>
+        <div class="info-box">
+            <h3>Performance Indicators</h3>
+            <ul>
+                <li><strong>Average Inventory Turnover:</strong> 5.6x per year (Industry avg: 4.8x)</li>
+                <li><strong>Stock Accuracy:</strong> 98.5% (Target: >95%)</li>
+                <li><strong>Days of Inventory:</strong> 65 days (Target: 60-75 days)</li>
+                <li><strong>Fill Rate:</strong> 96.2% (Target: >95%)</li>
+                <li><strong>Carrying Cost:</strong> 22% of inventory value (Industry avg: 25%)</li>
+            </ul>
+        </div>
+        
+        <div class="alert-box">
+            <h3>⚠️ Immediate Actions Required</h3>
+            <ul>
+                <li>Place urgent reorder for SKU ELC-2045 and FUR-8923</li>
+                <li>Initiate promotion campaign for overstock items</li>
+                <li>Schedule quarterly audit for Industrial Tools category</li>
+            </ul>
+        </div>
+        
+        <h2>Recommendations</h2>
+        <ul>
+            <li><strong>Optimize reorder points:</strong> Review and adjust reorder points for fast-moving items</li>
+            <li><strong>Clearance strategy:</strong> Implement aggressive discounting for slow-moving Industrial Tools</li>
+            <li><strong>Supplier diversification:</strong> Consider additional suppliers for critical SKUs to reduce lead times</li>
+            <li><strong>Demand forecasting:</strong> Implement AI-based forecasting to reduce overstock situations</li>
+        </ul>
+        
+        <div class="nav-links">
+            <a href="sales-report.htm">← Sales Report</a>
+            <a href="../index.html">Home</a>
+            <a href="financial-report.htm">Next: Financial Report →</a>
+        </div>
+    </div>
+</body>
+</html>
